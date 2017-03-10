@@ -1,5 +1,7 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+
 
   # GET /films
   # GET /films.json
@@ -14,7 +16,7 @@ class FilmsController < ApplicationController
 
   # GET /films/new
   def new
-    @film = Film.new
+    @film = current_user.films.build
   end
 
   # GET /films/1/edit
@@ -24,7 +26,7 @@ class FilmsController < ApplicationController
   # POST /films
   # POST /films.json
   def create
-    @film = Film.new(film_params)
+    @film = current_user.films.build(film_params)
 
     respond_to do |format|
       if @film.save
