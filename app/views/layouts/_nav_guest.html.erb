@@ -16,13 +16,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/index">Home</a></li>
+        <li><a href="/index"><span class="glyphicon glyphicon glyphicon-home">Home</span></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+            <li><%= link_to('Sign Up', new_user_registration_path, class: "btn btn-info") %></li>
             <li role="separator" class="divider"></li>
-            <li><%= link_to('Log In', new_user_session_path) %></li>
+            <li><%= link_to('Log In', new_user_session_path, class: "btn btn-info") %></li>
           </ul>
         </li>
       </ul>
