@@ -1,17 +1,18 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../assets/stylesheets/animate.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Films</h1>
+<h1 class="title">Listing Films</h1>
 
-<table>
+<table class="content">
   <thead>
     <tr>
       <th>Movie</th>
-      <th>Length</th>
-      <th>Review</th>
+      <th>Description</th>
+      <th>MovieLength</th>
       <th>Director</th>
       <th>Rating</th>
       <th colspan="3"></th>
@@ -22,8 +23,8 @@
     <% @films.each do |film| %>
       <tr>
         <td><%= film.movie %></td>
-        <td><%= film.length %></td>
         <td><%= film.review %></td>
+        <td><%= film.length %></td>
         <td><%= film.director %></td>
         <td><%= film.rating %></td>
         <td><%= link_to 'Show', film, class: "link-color" %></td>
@@ -38,3 +39,9 @@
 
 <%= link_to 'New Film', new_film_path, class: "btn btn-primary" %>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.content').addClass('animated fadeInRightBig');
+    $('.title').addClass('animated fadeInLeftBig');
+});
+</script>
